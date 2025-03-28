@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "CO2 Tracker",
+  "version": "1.0",
+  "description": "Traccia il consumo di dati e calcola le emissioni di CO2",
+  "permissions": ["storage", "activeTab", "webRequest", "webRequestBlocking", "tabs", "declarativeNetRequest"],
+  "host_permissions": ["<all_urls>"] ,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
