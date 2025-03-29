@@ -5,7 +5,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+    font-family: "Merriweather", serif;
 }
 
 body {
@@ -21,6 +21,13 @@ header {
     color: #fff;
     padding: 20px;
     text-align: center;
+    box-shadow: 5px 10px 18px #888888;;
+}
+
+
+#logoImg img{
+    float: left;
+    border-radius: 50%;
 }
 
 nav ul {
@@ -33,12 +40,15 @@ nav ul {
 
 nav ul li {
     display: inline;
+    margin-top: 10px;
 }
+
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
     font-size: 1.2em;
+    
 }
 
 main {
@@ -80,10 +90,14 @@ main {
 }
 
 .login-container button:hover {
-    background: #555;
+    background: #4b6382;
 }
 
 footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
     background: #222;
     color: white;
     text-align: center;
@@ -100,10 +114,68 @@ footer {
 
 @media (max-width: 480px) {
     header h1 {
-        font-size: 1.5em;
+        font-size: 1.2em;
     }
 
     nav ul li a {
         font-size: 1em;
     }
 }
+
+#dataConsuption{
+
+    background-color: #a4b5c4;
+    border-radius: 5px;
+    padding: 20px;
+    width: 100%;
+}
+#dataConsuption h2{
+    background-color:#3c949e;
+    border-radius: 5px;
+}
+
+#tableConvertion{
+    background-color: #d5f2f8;
+    border-radius: 5px;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+}
+#textTable{
+    background-color: #3c949e;
+    border-radius: 5px;
+}
+
+#carouselExampleFade{
+    text-align: center;
+    background-color: #cdd5db ;
+    border-radius: 5px;
+    padding: 15px;
+    width: 100%;
+
+}
+
+#textConsigli{
+    background-color:#3c949e;
+    border-radius: 5px;
+}
+
+.col{
+    margin: 10px;
+}
+
+.row{
+    margin: 10px;
+}
+
+/*
+.rowTable1{
+    
+}
+.rowTable2{
+    
+}
+.rowTable3{
+    
+}
+*/
