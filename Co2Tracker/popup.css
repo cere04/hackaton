@@ -1,0 +1,134 @@
+:root {
+  --blue-dark: #1e3a8a;
+  --blue-medium: #2563eb;
+  --blue-light: #93c5fd;
+  --blue-very-light: #dbeafe;
+  --blue-bg: #eff6ff;
+  --green: #10b981;
+  --red: #ef4444;
+  --gray: #6b7280;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--blue-bg);
+  color: var(--blue-dark);
+  margin: 0;
+  padding: 20px;
+  width: 300px;
+  max-height: 500px;
+  overflow-y: auto;
+  box-sizing: border-box;
+  border: 1px solid var(--blue-light);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 1.5rem;
+  color: var(--blue-dark);
+  text-align: center;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--blue-medium);
+  font-weight: bold;
+}
+
+#stats {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 0 15px 0;
+}
+
+#stats li {
+  padding: 10px 15px;
+  margin-bottom: 8px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s;
+}
+
+#stats li:hover {
+  background-color: var(--blue-very-light);
+}
+
+#stats li span:last-child {
+  font-weight: bold;
+  color: var(--blue-dark);
+}
+
+h2 {
+  font-size: 1.2rem;
+  color: var(--blue-dark);
+  margin: 20px 0 10px 0;
+  text-align: center;
+  position: relative;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 2px;
+  background-color: var(--blue-medium);
+}
+
+#totals {
+  font-size: 1rem;
+  color: white;
+  background-color: var(--blue-medium);
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+  margin-top: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Stile per i valori importanti nei totali */
+#totals span {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: white;
+}
+
+/* Messaggio di caricamento */
+#stats.loading,
+#totals.loading {
+  color: var(--gray);
+  font-style: italic;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Media Queries per responsive */
+@media (max-width: 400px) {
+  body {
+    width: 250px;
+    padding: 15px;
+  }
+  
+  h1 {
+    font-size: 1.3rem;
+  }
+  
+  #stats li {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+  
+  h2 {
+    font-size: 1.1rem;
+  }
+  
+  #totals {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+}

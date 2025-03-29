@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcolatore CO2 per Siti Web</title>
+    <link rel="stylesheet" href="verificasito.css">
+    <link rel="stylesheet" href="shared.css">
+
+
+</head>
+
+<header>
+    <div class="header-container">
+        <a href="calcolatore.html" class="logo">
+            <span class="logo-icon">🌱</span>
+            <span>CO2 Calculator</span>
+        </a>
+        
+        <nav class="nav-desktop">
+            <a href="calcolatore.html">Calcolatore</a>
+            <a href="verificaSito.html">Verifica il tuo Sito</a>
+            <a href="hints.html">Scopri i Consigli</a>
+
+        </nav>
+        
+        <button class="menu-toggle" id="menuToggle">☰</button>
+        
+        <nav class="nav-mobile" id="mobileMenu">
+            <a href="calcolatore.html">Calcolatore</a>
+            <a href="verificaSito.html">Informazioni</a>
+            <a href="hints.html">Scopri i Consigli</a>
+        </nav>
+    </div>
+</header>
+
+<body>
+    <h1>Calcolatore CO2 per Siti Web</h1>
+    
+    <div class="calculator-container">
+        <div class="input-section">
+            <div class="calculator">
+                <div class="form-group">
+                    <label for="url">URL del sito web:</label>
+                    <input type="text" id="url" placeholder="Es. https://www.example.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="country">Nazione principale dell'utenza:</label>
+                    <select id="country">
+                        <option value="global">🌍 Media globale</option>
+                        <option value="europe">🇪🇺 Europa</option>
+                        <option value="north-america">🇺🇸 Nord America</option>
+                        <option value="asia">🇨🇳 Asia</option>
+                        <option value="south-america">🇧🇷 Sud America</option>
+                        <option value="africa">🇿🇦 Africa</option>
+                        <option value="oceania">🇦🇺 Oceania</option>
+                    </select>
+                </div>
+                
+                <div class="visitors-info">
+                    <strong>Visitatori mensili stimati:</strong> 10,000 (valore predefinito)
+                </div>
+                
+                <button onclick="calculateCO2()">CALCOLA EMISSIONI</button>
+            </div>
+        </div>
+        
+        <div class="result-section">
+            <div class="calculator">
+                <div id="result" class="result">
+                    <h3 class="result-title">Risultati per <span id="result-url"></span></h3>
+                    <p>Nazione principale: <strong id="result-country"></strong></p>
+                    <p>Visitatori mensili: <strong>10,000</strong> (valore predefinito)</p>
+                    
+                    <div class="result-grid">
+                        <div class="result-card">
+                            <div class="result-card-title">Emissioni per pagina</div>
+                            <p class="co2-value"><span id="co2-per-page">0</span> g CO₂</p>
+                        </div>
+                        <div class="result-card">
+                            <div class="result-card-title">Emissioni mensili</div>
+                            <p class="co2-value"><span id="co2-total">0</span> kg CO₂</p>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 20px;">
+                        <div class="result-card-title">Equivalenze</div>
+                        <div id="equivalent">
+                            <div class="equivalent-item">
+                                <span class="equivalent-icon">🌳</span>
+                                <span id="trees-equivalent">0</span> alberi necessari/anno
+                            </div>
+                            <div class="equivalent-item">
+                                <span class="equivalent-icon">🚗</span>
+                                <span id="car-equivalent">0</span> km percorsi in auto
+                            </div>
+                            <div class="equivalent-item">
+                                <span class="equivalent-icon">💡</span>
+                                <span id="bulbs-equivalent">0</span> lampadine accese per un giorno
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Navigazione</h3>
+                <a href="calcolatore.html">Calcolatore</a>
+                <a href="verificaSito.html">Verifica il tuo Sito</a>
+                <a href="hints.html">Scopri i Consigli</a>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Risorse Utilizzate</h3>
+                <a href="https://rootwebdesign.studio/articles/how-much-carbon-does-a-website-produce/#h-the-problem-with-calculating-website-emissions">Come Calcolare le Emissioni</a>
+                <a href="https://www.energuide.be/en/questions-answers/do-i-emit-co2-when-i-surf-the-internet/69/">Consumi di Co2 per Attività</a>
+                <a href="https://www.piano-d.it/sostenibilita/">Hosting Sostenibili</a>
+                <a href="https://karmametrix.com/it/blog/sostenibilita-web/cinque-modi-per-ridurre-la-carbon-footprint-digitale/">Consigli per la Riduzione di Emissioni</a>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>© 2025 Calcolatore CO2 Attività Online. Tutti i diritti riservati NextGen_Hack</p>
+            <p><a href="#">Privacy Policy</a> | <a href="#">Termini di servizio</a></p>
+        </div>
+    </footer>
+
+    <script src="scriptVerifica.js"></script>
+</body>
+</html>

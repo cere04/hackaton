@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcolatore Emissioni CO2 Attività Online</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="shared.css">
+
+</head>
+
+<header>
+    <div class="header-container">
+        <a href="calcolatore.html" class="logo">
+            <span class="logo-icon">🌱</span>
+            <span>CO2 Calculator</span>
+        </a>
+        
+        <nav class="nav-desktop">
+            <a href="calcolatore.html">Calcolatore</a>
+            <a href="verificaSito.html">Verifica il tuo Sito</a>
+            <a href="hints.html">Scopri i Consigli</a>
+
+        </nav>
+        
+        <button class="menu-toggle" id="menuToggle">☰</button>
+        
+        <nav class="nav-mobile" id="mobileMenu">
+            <a href="calcolatore.html">Calcolatore</a>
+            <a href="verificaSito.html">Informazioni</a>
+            <a href="hints.html">Scopri i Consigli</a>
+        </nav>
+    </div>
+</header>
+
+<body>
+    <h1>Calcolatore Emissioni CO2 Attività Online</h1>
+    
+    <div class="calculator-container">
+        <div class="input-section">
+            <div class="calculator">
+                <!-- Streaming Video -->
+                <div class="activity-section">
+                    <div class="activity-title">1. Streaming Video (Netflix, YouTube, Disney+)</div>
+                    <div class="activity-info">
+                        <span>ⓘ</span> 
+                        Guardare video in 4K (1 ora): 55-60 g CO₂ | 
+                        HD (1080p): 20 g CO₂ | 
+                        SD (480p): 8-10 g CO₂
+                    </div>
+                    <div class="form-group">
+                        <label for="streaming">Ore per settimana:</label>
+                        <input type="number" id="streaming" min="0" step="0.1" value="0" placeholder="Es. 5.5">
+                    </div>
+                    <div class="option-group">
+                        <label for="streaming-quality">Qualità video:</label>
+                        <select id="streaming-quality">
+                            <option value="0.008">SD (480p) - 0.008 kg CO2/ora</option>
+                            <option value="0.02" selected>HD (1080p) - 0.02 kg CO2/ora</option>
+                            <option value="0.057">4K - 0.057 kg CO2/ora</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- Videoconferenze -->
+                <div class="activity-section">
+                    <div class="activity-title">2. Videoconferenze (Zoom, Google Meet, Teams)</div>
+                    <div class="activity-info">
+                        <span>ⓘ</span> 
+                        1 ora di videoconferenza in HD: 1-2 kg CO₂ | 
+                        Senza fotocamera: riduzione del 96%
+                    </div>
+                    <div class="form-group">
+                        <label for="videoconf">Ore per settimana:</label>
+                        <input type="number" id="videoconf" min="0" step="0.1" value="0" placeholder="Es. 3">
+                    </div>
+                    <div class="option-group">
+                        <label for="videoconf-quality">Modalità:</label>
+                        <select id="videoconf-quality">
+                            <option value="0.04">Audio solo (0.04 kg CO2/ora)</option>
+                            <option value="1.5" selected>Video HD (1.5 kg CO2/ora)</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- Social Media -->
+                <div class="activity-section">
+                    <div class="activity-title">3. Social Media (Instagram, Facebook, TikTok, Twitter)</div>
+                    <div class="activity-info">
+                        <span>ⓘ</span> 
+                        1 ora di navigazione: 15 g CO₂ | 
+                        1 foto su Instagram: 0.15 g CO₂ | 
+                        1 video TikTok: 2-3 g CO₂
+                    </div>
+                    <div class="form-group">
+                        <label for="social">Ore per settimana:</label>
+                        <input type="number" id="social" min="0" step="0.1" value="0" placeholder="Es. 7">
+                    </div>
+                    <div class="form-group">
+                        <label for="social-photos">Foto caricate (settimana):</label>
+                        <input type="number" id="social-photos" min="0" value="0" placeholder="Es. 10">
+                    </div>
+                    <div class="form-group">
+                        <label for="social-videos">Video caricati (settimana):</label>
+                        <input type="number" id="social-videos" min="0" value="0" placeholder="Es. 2">
+                    </div>
+                </div>
+                
+                <button onclick="calculateCO2()">CALCOLA EMISSIONI CO2</button>
+            </div>
+        </div>
+        
+        <div class="result-section">
+            <div class="calculator">
+                <div class="result">
+                    <h3 class="result-title">Risultati</h3>
+                    
+                    <div id="empty-state" style="text-align: center; padding: 40px 0; color: var(--gray);">
+                        <p>Inserisci i dati e clicca "Calcola Emissioni" per vedere i risultati</p>
+                    </div>
+                    
+                    <div id="results-content" style="display: none;">
+                        <div class="result-grid">
+                            <div class="result-card">
+                                <div class="result-card-title">Emissioni settimanali</div>
+                                <div class="co2-value"><span id="total-co2">0</span> kg</div>
+                            </div>
+                            <div class="result-card">
+                                <div class="result-card-title">Emissioni annuali</div>
+                                <div class="co2-value"><span id="annual-co2">0</span> kg</div>
+                            </div>
+                        </div>
+                        
+                        <div class="result-card" style="margin-bottom: 20px;">
+                            <div class="result-card-title">Dettaglio attività</div>
+                            <div id="activity-breakdown"></div>
+                        </div>
+                        
+                        <div class="equivalent-item">
+                            <div class="result-card-title">Equivalenze</div>
+                            <div id="equivalent">
+                                <p><span class="equivalent-icon">🌳</span> <span id="trees-equivalent">0</span> alberi necessari/anno</p>
+                                <p><span class="equivalent-icon">🚗</span> <span id="car-equivalent">0</span> km percorsi in auto</p>
+                                <p><span class="equivalent-icon">💡</span> <span id="bulbs-equivalent">0</span> lampadine accese per un giorno</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Navigazione</h3>
+                <a href="calcolatore.html">Calcolatore</a>
+                <a href="verificaSito.html">Verifica il tuo Sito</a>
+                <a href="hints.html">Scopri i Consigli</a>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Risorse Utilizzate</h3>
+                <a href="https://rootwebdesign.studio/articles/how-much-carbon-does-a-website-produce/#h-the-problem-with-calculating-website-emissions">Come Calcolare le Emissioni</a>
+                <a href="https://www.energuide.be/en/questions-answers/do-i-emit-co2-when-i-surf-the-internet/69/">Consumi di Co2 per Attività</a>
+                <a href="https://www.piano-d.it/sostenibilita/">Hosting Sostenibili</a>
+                <a href="https://karmametrix.com/it/blog/sostenibilita-web/cinque-modi-per-ridurre-la-carbon-footprint-digitale/">Consigli per la Riduzione di Emissioni</a>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>© 2025 Calcolatore CO2 Attività Online. Tutti i diritti riservati NextGen_Hack</p>
+            <p><a href="#">Privacy Policy</a> | <a href="#">Termini di servizio</a></p>
+        </div>
+    </footer>
+
+    <script src="scriptCalculator.js"></script>
+</body>
+</html>

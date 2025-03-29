@@ -1,0 +1,96 @@
+:root {
+    --blue-dark: #1e3a8a;
+    --blue-medium: #2563eb;
+    --blue-light: #93c5fd;
+    --blue-very-light: #dbeafe;
+    --blue-bg: #eff6ff;
+    --green: #10b981;
+    --red: #ef4444;
+    --gray: #6b7280;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--blue-bg);
+    max-width: 1200px;
+    line-height: 1.6;
+}
+
+.co2-box {
+    background: white;
+    border-left: 5px solid var(--primary);
+    padding: 20px;
+    margin: 25px 0;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+.co2-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.easter-egg {
+    border-left-color: var(--easter-egg);
+    background: #fff8e1;
+}
+.co2-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+.co2-icon {
+    font-size: 24px;
+    margin-right: 12px;
+}
+.category-tag {
+    display: inline-block;
+    padding: 3px 8px;
+    background-color: var(--blue-medium);
+    color: white;
+    border-radius: 12px;
+    font-size: 12px;
+    margin-left: 10px;
+    opacity: 0.9;
+}
+button {
+    background: linear-gradient(to right, var(--blue-dark), var(--blue-medium));
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,107,179,0.3);
+}
+.stats {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #6c757d;
+}
+.co2-meter {
+    height: 5px;
+    background: #e9ecef;
+    border-radius: 5px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+.co2-progress {
+    height: 100%;
+    background: linear-gradient(to right, #4caf50, #ff9800);
+    width: 0%;
+    transition: width 0.5s;
+}
+@media (max-width: 600px) {
+    body { padding: 15px; }
+    .co2-box { padding: 15px; }
+}

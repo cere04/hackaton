@@ -1,0 +1,51 @@
+
+.mappa-container {
+    width: 80%;
+    height: 75vh;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background: white;
+    margin: 30px auto;
+    /* Centratura orizzontale con margin: auto */
+    display: block;
+    /* Necessario per margin: auto */
+    padding: 0;
+    /* Rimuove padding interno */
+}
+
+.mappa-iframe {
+    position: absolute;
+    top: 0;
+    left: -56px;
+    width: calc(100% + 50px);
+    height: 100%;
+    border: none;
+}
+
+@media (max-width: 768px) {
+    .mappa-container {
+        height: 60vh;
+    }
+
+    .mappa-iframe {
+        left: -30px;
+        width: calc(100% + 30px);
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+#titolo {
+    text-align: center;
+    margin-top: 2em;
+    /* Riduci spazio sopra gli heading */
+
+}
