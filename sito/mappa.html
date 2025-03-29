@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcolatore Emissioni CO2 Attività Online</title>
+    <link rel="stylesheet" href="mappaStyle.css">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="shared.css">
+
+</head>
+
+<header>
+    <div class="header-container">
+        <a href="calcolatore.html" class="logo">
+            <span class="logo-icon">🌱</span>
+            <span>CO2 Calculator</span>
+        </a>
+        
+        <nav class="nav-desktop">
+            <a href="calcolatore.html">Calcolatore</a>
+            <a href="verificaSito.html">Verifica il tuo Sito</a>
+            <a href="hints.html">Scopri i Consigli</a>
+
+        </nav>
+        
+        <button class="menu-toggle" id="menuToggle">☰</button>
+        
+        <nav class="nav-mobile" id="mobileMenu">
+            <a href="calcolatore.html">Calcolatore</a>
+            <a href="verificaSito.html">Informazioni</a>
+            <a href="hints.html">Scopri i Consigli</a>
+        </nav>
+    </div>
+</header>
+
+<body>
+    <section>
+        <h2 id="titolo">Mappa Globale delle Emissioni di CO2 in Tempo Reale del consumo elettrico</h2>
+    </section>
+    <section>
+        <div class="mappa-container">
+            <iframe class="mappa-iframe" src="https://app.electricitymaps.com/map/72h/hourly"
+                sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer" loading="eager" allowfullscreen
+                title="Mappa Emissioni CO₂">
+            </iframe>
+        </div>
+        <p style="text-align: center;">Dati forniti da <a href="https://electricitymaps.com" target="_blank"
+                rel="noopener noreferrer">Electricity Maps</a></p>
+    </section>
+</body>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Navigazione</h3>
+                <a href="calcolatore.html">Calcolatore</a>
+                <a href="verificaSito.html">Verifica il tuo Sito</a>
+                <a href="hints.html">Scopri i Consigli</a>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Risorse Utilizzate</h3>
+                <a href="https://rootwebdesign.studio/articles/how-much-carbon-does-a-website-produce/#h-the-problem-with-calculating-website-emissions">Come Calcolare le Emissioni</a>
+                <a href="https://www.energuide.be/en/questions-answers/do-i-emit-co2-when-i-surf-the-internet/69/">Consumi di Co2 per Attività</a>
+                <a href="https://www.piano-d.it/sostenibilita/">Hosting Sostenibili</a>
+                <a href="https://karmametrix.com/it/blog/sostenibilita-web/cinque-modi-per-ridurre-la-carbon-footprint-digitale/">Consigli per la Riduzione di Emissioni</a>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>© 2025 Calcolatore CO2 Attività Online. Tutti i diritti riservati NextGen_Hack</p>
+            <p><a href="#">Privacy Policy</a> | <a href="#">Termini di servizio</a></p>
+        </div>
+    </footer>
+</html>

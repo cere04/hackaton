@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcolatore CO2 per Siti Web</title>
+    <link rel="stylesheet" href="hintsStyle.css">
+    <link rel="stylesheet" href="shared.css">
+
+
+</head>
+
+<header>
+    <div class="header-container">
+        <a href="calcolatore.html" class="logo">
+            <span class="logo-icon">🌱</span>
+            <span>CO2 Calculator</span>
+        </a>
+        
+        <nav class="nav-desktop">
+            <a href="calcolatore.html">Calcolatore</a>
+            <a href="verificaSito.html">Verifica il tuo Sito</a>
+            <a href="hints.html">Scopri i Consigli</a>
+
+        </nav>
+        
+        <button class="menu-toggle" id="menuToggle">☰</button>
+        
+        <nav class="nav-mobile" id="mobileMenu">
+            <a href="calcolatore.html">Calcolatore</a>
+            <a href="verificaSito.html">Informazioni</a>
+            <a href="hints.html">Scopri i Consigli</a>
+        </nav>
+    </div>
+</header>
+
+    <body>
+    <h1>🌱 Riduci la tua impronta digitale di CO₂</h1>
+    <p>Ogni click genera CO₂! Leggi con attenzione invece di cambiare velocemente:</p>
+    
+    <div id="co2TipContainer" class="co2-box">
+        <!-- Il consiglio verrà inserito qui via JavaScript -->
+    </div>
+    
+    <button id="newTipButton">Mostra un altro consiglio</button>
+    <p class="tip-number">Suggerimento <span id="tipCounter">1</span> di <span id="totalTips">50+</span></p>
+    
+</body>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Navigazione</h3>
+                <a href="calcolatore.html">Calcolatore</a>
+                <a href="verificaSito.html">Verifica il tuo Sito</a>
+                <a href="hints.html">Scopri i Consigli</a>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Risorse Utilizzate</h3>
+                <a href="https://rootwebdesign.studio/articles/how-much-carbon-does-a-website-produce/#h-the-problem-with-calculating-website-emissions">Come Calcolare le Emissioni</a>
+                <a href="https://www.energuide.be/en/questions-answers/do-i-emit-co2-when-i-surf-the-internet/69/">Consumi di Co2 per Attività</a>
+                <a href="https://www.piano-d.it/sostenibilita/">Hosting Sostenibili</a>
+                <a href="https://karmametrix.com/it/blog/sostenibilita-web/cinque-modi-per-ridurre-la-carbon-footprint-digitale/">Consigli per la Riduzione di Emissioni</a>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>© 2025 Calcolatore CO2 Attività Online. Tutti i diritti riservati NextGen_Hack</p>
+            <p><a href="#">Privacy Policy</a> | <a href="#">Termini di servizio</a></p>
+        </div>
+    </footer>
+
+    <script src="hintsScript.js"></script>
+
+</html>
